@@ -18,4 +18,7 @@ defmodule Tuple do
 
   def add(a, b), do: tuple(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w)
   def subtract(a, b), do: tuple(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w)
+  def negate(a), do: tuple(-a.x, -a.y, -a.z, -a.w)
+  def multiply(a, b), do: tuple(a.x * b, a.y * b, a.z * b, a.w * b)
+  def divide(a, b), do: tuple(a.x / b, a.y / b, a.z / b, a.w / b)
 end

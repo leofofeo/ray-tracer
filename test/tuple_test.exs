@@ -50,4 +50,24 @@ defmodule TupleTest do
     v2 = vector(5, 6, 7)
     assert subtract(v1, v2) == vector(-2, -4, -6)
   end
+
+  test "negating a tuple" do
+    a = tuple(1, -2, 3, -4)
+    assert negate(a) == tuple(-1, 2, -3, 4)
+  end
+
+  test "multiplying a tuple by a scalar" do
+    a = tuple(1, -2, 3, -4)
+    assert multiply(a, 3.5) == tuple(3.5, -7, 10.5, -14)
+  end
+
+  test "multiplying a tuple by a fraction" do
+    a = tuple(1, -2, 3, -4)
+    assert multiply(a, 0.5) == tuple(0.5, -1, 1.5, -2)
+  end
+
+  test "dividing a tuple by a scalar" do
+    a = tuple(1, -2, 3, -4)
+    assert divide(a, 2) == tuple(0.5, -1, 1.5, -2)
+  end
 end
