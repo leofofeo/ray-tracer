@@ -1,5 +1,6 @@
 defmodule Tuple do
   defstruct [:x, :y, :z, :w]
+  @epsilon 0.00001
 
   @type t :: %__MODULE__{
     x: float(),
@@ -8,9 +9,13 @@ defmodule Tuple do
     w: float(),
   }
 
-  def point(x, y, z), do: %__MODULE__{x: x, y: y, z: z, w: 1.0}
-  def vector(x, y, z), do: %__MODULE__{x: x, y: y, z: z, w: 0.0}
+  def equal?(a, b), do: abs(a - b) < @epsilon
+  def tuple(x, y, z, w), do: %__MODULE__{x: x, y: y, z: z, w: w}
+  def point(x, y, z), do: tuple(x, y, z, w=1.0)
+  def vector(x, y, z), do: tuple(x, y, z, w=0.0)
   def is_point?(%__MODULE__{w: w}), do: w == 1
   def is_vector?(%__MODULE__{w: w}), do: w == 0
 
+  def add(a, b), do: tuple(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w)
+  def subtract(a, b), do: tuple(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w)
 end
