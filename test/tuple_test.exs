@@ -1,6 +1,6 @@
 defmodule TupleTest do
   use ExUnit.Case
-  import Tuple
+  import RayTracer.Tuple
   doctest Tuple
 
   test "a tuple with w=1.0 is a point" do

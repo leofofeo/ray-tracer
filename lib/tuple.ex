@@ -1,4 +1,4 @@
-defmodule Tuple do
+defmodule RayTracer.Tuple do
   defstruct [:x, :y, :z, :w]
   @epsilon 0.00001
 
@@ -11,8 +11,8 @@ defmodule Tuple do
 
   def equal?(a, b), do: abs(a - b) < @epsilon
   def tuple(x, y, z, w), do: %__MODULE__{x: x, y: y, z: z, w: w}
-  def point(x, y, z), do: tuple(x, y, z, w=1.0)
-  def vector(x, y, z), do: tuple(x, y, z, w=0.0)
+  def point(x, y, z), do: tuple(x, y, z, 1.0)
+  def vector(x, y, z), do: tuple(x, y, z, 0.0)
   def is_point?(%__MODULE__{w: w}), do: w == 1
   def is_vector?(%__MODULE__{w: w}), do: w == 0
 
