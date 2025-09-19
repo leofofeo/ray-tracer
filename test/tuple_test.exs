@@ -104,4 +104,17 @@ defmodule TupleTest do
     normalized = normalize(v)
     assert magnitude(normalized) == 1
   end
+
+  test "the dot product of two tuples" do
+    a = vector(1, 2, 3)
+    b = vector(2, 3, 4)
+    assert dot(a, b) == 20
+  end
+
+  test "the cross product of two vectors" do
+    a = vector(1, 2, 3)
+    b = vector(2, 3, 4)
+    assert cross(a, b) == vector(-1, 2, -1)
+    assert cross(b, a) == vector(1, -2, 1)
+  end
 end
