@@ -21,4 +21,9 @@ defmodule Tuple do
   def negate(a), do: tuple(-a.x, -a.y, -a.z, -a.w)
   def multiply(a, b), do: tuple(a.x * b, a.y * b, a.z * b, a.w * b)
   def divide(a, b), do: tuple(a.x / b, a.y / b, a.z / b, a.w / b)
+  def magnitude(a), do: :math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z + a.w * a.w)
+  def normalize(v) do
+    v_mag = magnitude(v)
+    tuple(v.x / v_mag, v.y / v_mag, v.z / v_mag, v.w / v_mag)
+  end
 end

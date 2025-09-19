@@ -70,4 +70,38 @@ defmodule TupleTest do
     a = tuple(1, -2, 3, -4)
     assert divide(a, 2) == tuple(0.5, -1, 1.5, -2)
   end
+
+  test "computing the magnitude of a vector" do
+    v = vector(1, 0, 0)
+    assert magnitude(v) == 1
+
+    v = vector(0, 1, 0)
+    assert magnitude(v) == 1
+
+    v = vector(0, 0, 1)
+    assert magnitude(v) == 1
+
+    v = vector(1, 2, 3)
+    assert magnitude(v) == :math.sqrt(14)
+
+    v = vector(-1, -2, -3)
+    assert magnitude(v) == :math.sqrt(14)
+  end
+
+  test "normalizing vector(4, 0, 0) produces (1, 0, 0)" do
+    v = vector(4, 0, 0)
+    assert normalize(v) == vector(1, 0, 0)
+  end
+
+  test "normalizing vector(1, 2, 3)" do
+    v = vector(1, 2, 3)
+    divisor = :math.sqrt(14)
+    assert normalize(v) == vector((1/divisor), (2/divisor), (3/divisor))
+  end
+
+  test "the magnitude of a normalized vector is 1" do
+    v = vector(1, 2, 3)
+    normalized = normalize(v)
+    assert magnitude(normalized) == 1
+  end
 end
