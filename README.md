@@ -1,21 +1,3 @@
 # RayTracer
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ray_tracer` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:ray_tracer, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ray_tracer>.
-
+An implementation of a ray tracer using [the Ray Tracer Challenge book](http://raytracerchallenge.com/), using Elixir. The Ray Tracer Challenge is pretty fun because it doesn't give you any code - it gives you tests (as pseudocode) to implement, and leaves it up to you to make those tests pass with your code. It's a great way to practice TDD and get creative with your program design. Been learning a lot about Elixir and ray tracing.
